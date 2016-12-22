@@ -1,0 +1,116 @@
+{
+  "list": [
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国首次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "250",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    },
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国二次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "251",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ,
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国三次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "253",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ,
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国四次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "254",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ,
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国五次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "256",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ,
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国六次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "257",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ,
+    {
+      "cat_type": "足球",
+      "guess_id": "",
+      "guess_title": "中国七次登录太阳",
+      "match_id": "",
+      "match_name": "中国  vs  太阳",
+      "my_option": "",
+      "option_left": "诸葛亮",
+      "option_right": "周瑜",
+      "room_bet": "257",
+      "room_id": "",
+      "stop_time": "11:20",
+      "total_left": "123",
+      "total_right": "456"
+    }
+  ],
+  "message": "OK",
+  "status": "_0000"
+}

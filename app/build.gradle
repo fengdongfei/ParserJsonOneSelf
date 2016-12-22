@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    productFlavors{
+        // TODO 新建渠道号,针对不同手机定制版本
+        xiaomi{
+//            applicationId 'com.xiaomi.example'
+            buildConfigField 'String', 'PROJECT_URL', '"http://rsm.sit.com/appService/"'
+            buildConfigField 'String', 'PROJECT_URL_NEW', '"http://rsm.sit.com/appService/"'
+            buildConfigField 'String', 'ATTACH_URL', '"http://rsm.sit.com/rsmrest/appCaseAttachUpload.json"'
+            buildConfigField 'String', 'OTHERCASE_ATTACH_URL', '"http://rsm.sit.com/rsmrest/appAttachUpload.json"'
+        }
+        sanxing{
+//            applicationId 'com.sanxing.example'
+            buildConfigField 'String', 'PROJECT_URL', '"http://rsm.pre.com/appService/"'
+            buildConfigField 'String', 'PROJECT_URL_NEW', '"http://rsm.pre.com/appService/"'
+            buildConfigField 'String', 'ATTACH_URL', '"http://rsm.pre.com/rsmrest/appCaseAttachUpload.json"'
+            buildConfigField 'String', 'OTHERCASE_ATTACH_URL', '"http://rsm.pre.com/rsmrest/appAttachUpload.json"'
+        }
+        huawei{
+//            applicationId 'com.huawei.example'
+            buildConfigField 'String', 'PROJECT_URL', '"http://rsm.chexiang.com/appService/"'
+            buildConfigField 'String', 'PROJECT_URL_NEW', '"http://rsm.chexiang.com/appService/"'
+            buildConfigField 'String', 'ATTACH_URL', '"http://rsm.chexiang.com/rsmrest/appCaseAttachUpload.json"'
+            buildConfigField 'String', 'OTHERCASE_ATTACH_URL', '"http://rsm.chexiang.com/rsmrest/appAttachUpload.json"'
+        }
+
+    }
+    productFlavors.all { flavor ->
+        if (name == 'xiaomi') {
+            // prd环境
+            buildConfigField 'String', 'SECURITYKEY', '"apMlRkGq"'
+        } else {
+            // 其他环境
+            buildConfigField 'String', 'SECURITYKEY', '"R5eonU0A"'
+        }
+    }
+    signingConfigs {
+        release {
+            keyAlias 'release'
+            keyPassword 'android'
+            storeFile file('jsonparse.jks')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "25.0.1"
+    // TODO defaultConfig为所有的flavor提供基本的配置，每一个flavor都可以重设这些配置的值 http://www.tuicool.com/articles/BvqeAvf
+    defaultConfig {
+        applicationId "com.example.admin.jsonparserdemo"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    // TODO productFlavors > main（默认）
+    // TODO buildTypes > productFlavors
+
+    // TODO Release&Debug > 渠道版本定制 > 默认设置
+    buildTypes {
+//        release {
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    def outputFile = output.outputFile
+//                    def suffix = outputFile.name.substring(8);
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        def channel = "${variant.productFlavors[0].name}"
+//                        // 输出apk名称为rsm-v1.9-20160706-prd.apk
+//                        def fileName = "rsm-v${defaultConfig.versionName}-${releaseTime()}-${channel}-${suffix}"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
+//
+//                    // 删除unaligned apk
+//                    if (output.zipAlign != null) {
+//                        output.zipAlign.doLast {
+//                            output.zipAlign.inputFile.delete()
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        debug {
+//            signingConfig signingConfigs.release
+//        }
+//        pres {
+//            signingConfig signingConfigs.release
+//        }
+//        sits {
+//            signingConfig signingConfigs.release
+//        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+}
